@@ -4,10 +4,12 @@ namespace App\Library\Services;
 
 use App\Exceptions\FTPException;
 
-class FtpUtils {
+class FtpUtils
+{
     private $ftpHandle;
 
-    public function __construct(string $ftpHost, string $ftpUser, string $ftpPass) {
+    public function __construct(string $ftpHost, string $ftpUser, string $ftpPass)
+    {
         $this->ftpHandle = ftp_connect($ftpHost);
         if ($this->isConnected()) {
             if (!ftp_login($this->ftpHandle, $ftpUser, $ftpPass)) {
@@ -21,12 +23,14 @@ class FtpUtils {
         }
     }
 
-    public function isConnected(): bool {
+    public function isConnected(): bool
+    {
         return is_resource($this->ftpHandle);
     }
 
-    public function putToFTP(string $localFile, string $remotePath, string $remoteFileName): bool {
-        $remotePath = $this->cleanPath($remotePath);
+    public function putToFTP(string $localFile, string $remotePath, string $remoteFileName): bool
+    {
+        $remotePath     = $this->cleanPath($remotePath);
         $remoteFileName = $this->cleanFile($remoteFileName);
         if ($this->isConnected()) {
             if (!$this->remoteFolderExists($remotePath)) {
@@ -39,19 +43,22 @@ class FtpUtils {
         return true;
     }
 
-    public function cleanPath(string $path): string {
+    public function cleanPath(string $path): string
+    {
         return rtrim($path, '/') . '/';
     }
 
-    public function cleanFile(string $file): string {
+    public function cleanFile(string $file): string
+    {
         return ltrim($file, '/');
     }
 
-    function listFilesByFtp(string $path): array {
+    function listFilesByFtp(string $path): array
+    {
         $results = [];
         if ($this->isConnected()) {
             $pathCleaned = $this->cleanPath($path);
-            $files = ftp_nlist($this->ftpHandle, $pathCleaned);
+            $files       = ftp_nlist($this->ftpHandle, $pathCleaned);
 
             foreach ($files as $file) {
                 $justThefile = str_replace($pathCleaned, '', $file);
@@ -70,7 +77,8 @@ class FtpUtils {
      * @return bool
      * @throws FTPException
      */
-    public function remoteFolderExists(string $remotePath): bool {
+    public function remoteFolderExists(string $remotePath): bool
+    {
         if ($this->isConnected()) {
             $oldDir = ftp_pwd($this->ftpHandle);
             if (@ftp_chdir($this->ftpHandle, $remotePath)) {
@@ -91,7 +99,8 @@ class FtpUtils {
      * @return bool
      * @throws FTPException
      */
-    public function makeRemoteDir(string $remotePath): bool {
+    public function makeRemoteDir(string $remotePath): bool
+    {
         if ($this->isConnected()) {
             return false === ftp_mkdir($this->ftpHandle, $remotePath);
         } else {
@@ -108,12 +117,13 @@ class FtpUtils {
      * @throws FTPException
      * @throws \App\Exceptions\FileNotOpenableException
      */
-    public function getFile(string $remotePath, string $remoteFileName, string $localPath, string $localFileName, bool $deleteAfterGetting = false) {
+    public function getFile(string $remotePath, string $remoteFileName, string $localPath, string $localFileName, bool $deleteAfterGetting = false)
+    {
         if ($this->isConnected()) {
             try {
-                $fullLocalFilePath = $this->cleanPath($localPath) . $localFileName;
+                $fullLocalFilePath  = $this->cleanPath($localPath) . $localFileName;
                 $fullRemoteFilePath = $this->cleanPath($remotePath) . $remoteFileName;
-                $fileHandle = FileUtils::openFileForWriting($fullLocalFilePath);
+                $fileHandle         = FileUtils::openFileForWriting($fullLocalFilePath);
             } catch (\Exceptions\FileNotOpenableException $ex) {
                 throw new \Exception('Could not open destination file: ' . $ex->getMessage());
             }
@@ -130,13 +140,15 @@ class FtpUtils {
     }
 
     //
-    public function __destruct() {
+    public function __destruct()
+    {
         if ($this->isConnected()) {
             $this->closeConnection();
         }
     }
 
-    public function closeConnection() {
+    public function closeConnection()
+    {
         return ftp_close($this->ftpHandle);
     }
 }

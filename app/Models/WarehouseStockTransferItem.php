@@ -5,7 +5,8 @@ namespace App\Models;
 use App\Library\Services\Unleashed;
 use Illuminate\Database\Eloquent\Model;
 
-class WarehouseStockTransferItem extends Model {
+class WarehouseStockTransferItem extends Model
+{
     /**
      * [{"TransferOrderId":565,
      * "LineNumber":1,
@@ -27,27 +28,28 @@ class WarehouseStockTransferItem extends Model {
      */
     protected static $unleashed = null;
 
-    public function populateFromUnleashed(\stdClass $warehouseTransferItem) {
+    public function populateFromUnleashed(\stdClass $warehouseTransferItem)
+    {
         if (!isset(static::$unleashed)) {
             static::$unleashed = new Unleashed();
         }
         $product = Product::where('sku', $warehouseTransferItem->WarehouseProductCode)->first();
 
-        $this->source = 'unleashed';
-        $this->receipt_fifo_date = gmdate('Y-m-d H:i:s', Unleashed::getTimestampFromUnleashedDate($warehouseTransferItem->ReceiptFIFODate));
-        $this->remote_stock_transfer_id = $warehouseTransferItem->TransferOrderId;
-        $this->transfer_item_remote_id = $warehouseTransferItem->WarehouseProductId;
-        $this->remote_source_warehouse_id = $warehouseTransferItem->SourceWarehouseId;
-        $this->remote_destination_warehouse_id = $warehouseTransferItem->DestinationWarehouseId;
-        $this->batch_number = $warehouseTransferItem->BatchNumber;
-        $this->remote_source_product_id = $warehouseTransferItem->WarehouseProductId;
-        $this->expiry_date = gmdate('Y-m-d H:i:s', Unleashed::getTimestampFromUnleashedDate($warehouseTransferItem->ExpiryDate));
-        $this->line_number = $warehouseTransferItem->LineNumber;
-        $this->product_sku = $warehouseTransferItem->WarehouseProductCode;
-        $this->quantity = $warehouseTransferItem->TransferQuantity;
+        $this->source                                   = 'unleashed';
+        $this->receipt_fifo_date                        = gmdate('Y-m-d H:i:s', Unleashed::getTimestampFromUnleashedDate($warehouseTransferItem->ReceiptFIFODate));
+        $this->remote_stock_transfer_id                 = $warehouseTransferItem->TransferOrderId;
+        $this->transfer_item_remote_id                  = $warehouseTransferItem->WarehouseProductId;
+        $this->remote_source_warehouse_id               = $warehouseTransferItem->SourceWarehouseId;
+        $this->remote_destination_warehouse_id          = $warehouseTransferItem->DestinationWarehouseId;
+        $this->batch_number                             = $warehouseTransferItem->BatchNumber;
+        $this->remote_source_product_id                 = $warehouseTransferItem->WarehouseProductId;
+        $this->expiry_date                              = gmdate('Y-m-d H:i:s', Unleashed::getTimestampFromUnleashedDate($warehouseTransferItem->ExpiryDate));
+        $this->line_number                              = $warehouseTransferItem->LineNumber;
+        $this->product_sku                              = $warehouseTransferItem->WarehouseProductCode;
+        $this->quantity                                 = $warehouseTransferItem->TransferQuantity;
         $this->destination_warehouse_stock_level_before = $warehouseTransferItem->DestinateWarehouseStockOnHandBeforeTransfer;
-        $this->comments = $warehouseTransferItem->Comments;
-        $this->raw = json_encode($warehouseTransferItem);
+        $this->comments                                 = $warehouseTransferItem->Comments;
+        $this->raw                                      = json_encode($warehouseTransferItem);
 
         if ($this->save()) {
             try {
@@ -63,7 +65,8 @@ class WarehouseStockTransferItem extends Model {
 
     }
 
-    public function product(): \Illuminate\Database\Eloquent\Relations\BelongsTo {
+    public function product(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
         return $this->belongsTo(Product::class);
     }
     //

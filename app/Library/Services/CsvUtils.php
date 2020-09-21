@@ -8,10 +8,12 @@
 namespace App\Library\Services;
 
 use App\Exceptions\FileNotOpenableException;
+use App\Models\Order;
+use App\Models\OrderLine;
 
 class CsvUtils {
 
-    public static function makeWalkerRowDataFromOrder($order, $orderLine) {
+    public static function makeWalkerRowDataFromOrder(Order $order, OrderLine $orderLine) {
         $result = [
             'ORDERNUMBER' => $order->OrderNumber,
             'ORDERID' => '',

@@ -9,10 +9,10 @@
 namespace App\Library\Services;
 
 use App\Exceptions\OrderNotReadyForShippingException;
-use App\Order;
+use App\Models\Order;
 //use App\Library\Services\CourierMapper;
-use App\OrderLine;
-use App\Product;
+use App\Models\OrderLine;
+use App\Models\Product;
 use App\WarehouseStockTransfer;
 
 class WalkerUtils {

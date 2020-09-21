@@ -10,16 +10,18 @@ namespace App\Library\Services;
 use App\Exceptions\FileNotExistsException;
 use App\Exceptions\FileNotOpenableException;
 
-class FileUtils {
+class FileUtils
+{
 
     /**
      * @param string $fileName
      * @return int
      * @throws FileNotOpenableException
      */
-    public static function getStartTimestamp(string $fileName): int {
+    public static function getStartTimestamp(string $fileName): int
+    {
         try {
-            $timeStamp = (int)self::getFileContents($fileName);
+            $timeStamp = (int) self::getFileContents($fileName);
         } catch (FileNotExistsException $ex) {
             $timeStamp = strToTime('2018-01-01T19:20+01:00');
         }
@@ -32,7 +34,8 @@ class FileUtils {
      * @throws FileNotExistsException
      * @throws FileNotOpenableException
      */
-    public static function getFileContents(string $fileName): string {
+    public static function getFileContents(string $fileName): string
+    {
         $fileHandle = self::openFileForReading($fileName);
         // retrieve the timestamp from the file
         $contents = fgets($fileHandle);
@@ -47,7 +50,8 @@ class FileUtils {
      * @return bool
      * @throws FileNotOpenableException
      */
-    public static function writeFile(string $fileName, $timestamp) {
+    public static function writeFile(string $fileName, $timestamp)
+    {
         $fileHandle = self::openFileForWriting($fileName);
         fwrite($fileHandle, $timestamp);
         self::closeFile($fileHandle);
@@ -59,7 +63,8 @@ class FileUtils {
      * @return bool|resource
      * @throws FileNotOpenableException
      */
-    public static function openFileForWriting(string $fileName, $binaryMode = false) {
+    public static function openFileForWriting(string $fileName, $binaryMode = false)
+    {
         $mode = 'w+';
         if ($binaryMode) {
             $mode = 'wtb';
@@ -78,7 +83,8 @@ class FileUtils {
      * @throws FileNotExistsException
      * @throws FileNotOpenableException
      */
-    public static function openFileForReading(string $fileName) {
+    public static function openFileForReading(string $fileName)
+    {
         if (is_file($fileName)) {
             $fileHandle = fopen($fileName, 'r');
             if ($fileHandle) {
@@ -94,7 +100,8 @@ class FileUtils {
     /**
      * @param $fileHandle
      */
-    public static function closeFile($fileHandle) {
+    public static function closeFile($fileHandle)
+    {
         if (is_resource($fileHandle)) {
             fclose($fileHandle);
         }

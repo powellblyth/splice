@@ -1,14 +1,224 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1b7e8de-93f5-45e6-aa80-f9de343946d7" name="Default Changelist" comment="" />
+    <list default="true" id="d1b7e8de-93f5-45e6-aa80-f9de343946d7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/exportProductsToWalker.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/exportStockTransfersToWalker.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/exportToWalker.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/importOrdersFromUnleashed.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/importProductGroupsFromUnleashed.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/importProductsFromUnleashed.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/importWalkerOrderConfirms.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/importWarehouseStockTransfersFromUnleashed.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/importWarehousesFromUnleashed.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/processWalkerDespatchConfirms.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/processWalkerStockReports.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/reportUnprocessedOrders.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/scruffy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/showOrder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Exceptions/BadFileException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Exceptions/FTPException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Exceptions/FileNotExistsException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Exceptions/FileNotOpenableException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Exceptions/OrderNotReadyForShippingException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Notifications/OrderFailedExportNotification.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Notifications/OrderSuccessfullyExportedNotification.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Notifications/OrdersDespatchUpdateFailureNotification.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Notifications/OrdersDespatchedNotification.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Notifications/UnprocessedOrdersNotification.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Notifications/importFromSupplierErrorNotification.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Notifications/importOrderConfirmsFromSupplierNotification.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Notifications/stockReportFromSupplierErrorNotification.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/aftership.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/couriers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/ftp.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/unleashed.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/walker.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/ModelTestBase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/App/Console/Commands/ProcessWalkerStockReportsTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/App/Models/ProductGroupTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/App/Models/ProductTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/App/Models/ShipmentTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/App/Models/WarehouseStockTransferItemTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/App/Models/WarehouseStockTransferTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/App/Models/WarehouseTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/Library/Services/AfterShipTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/Library/Services/CountryHelperTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/Library/Services/CourierMapperTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/Library/Services/CsvUtilsTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/Library/Services/FactServiceTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/Library/Services/FtpUtilsTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/Library/Services/UnleashedTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/Library/Services/WalkerUtilsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/splice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/splice.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Library/Services/CsvUtils.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Library/Services/CsvUtils.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Library/Services/FactService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Library/Services/FactService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Library/Services/FileUtils.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Library/Services/FileUtils.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Library/Services/FtpUtils.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Library/Services/FtpUtils.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Library/Services/Unleashed.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Library/Services/Unleashed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Library/Services/WalkerUtils.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Library/Services/WalkerUtils.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/OrderLine.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/OrderLine.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Warehouse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Warehouse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/WarehouseStockTransfer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/WarehouseStockTransfer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/WarehouseStockTransferItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/WarehouseStockTransferItem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="composer.json" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/vendor/laravel/sanctum" />
+      <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/vendor/jaybizzle/crawler-detect" />
+      <path value="$PROJECT_DIR$/vendor/fruitcake/laravel-cors" />
+      <path value="$PROJECT_DIR$/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/pragmarx/google2fa" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/mobiledetect/mobiledetectlib" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/vendor/jenssegers/agent" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/livewire/livewire" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/laravel/jetstream" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/laravel/fortify" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/vendor/dasprid/enum" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
+      <path value="$PROJECT_DIR$/vendor/scrivo/highlight.php" />
+      <path value="$PROJECT_DIR$/vendor/voku/portable-ascii" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/vendor/league/commonmark" />
+      <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/vendor/facade/flare-client-php" />
+      <path value="$PROJECT_DIR$/vendor/facade/ignition" />
+      <path value="$PROJECT_DIR$/vendor/facade/ignition-contracts" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/aftership/aftership-php-sdk" />
+      <path value="$PROJECT_DIR$/vendor/laravel/telescope" />
+      <path value="$PROJECT_DIR$/vendor/php-mock/php-mock" />
+      <path value="$PROJECT_DIR$/vendor/php-mock/php-mock-integration" />
+      <path value="$PROJECT_DIR$/vendor/php-mock/php-mock-phpunit" />
+      <path value="$PROJECT_DIR$/vendor/giggsey/locale" />
+      <path value="$PROJECT_DIR$/vendor/giggsey/libphonenumber-for-php" />
+    </include_path>
   </component>
   <component name="ProjectId" id="1hlfuyh7MRvpU3YwbT4y7VGfYsg" />
   <component name="ProjectViewState">
@@ -19,21 +229,29 @@
     <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/database/factories" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/config" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/config" />
+      <recent name="$PROJECT_DIR$/app/Exceptions" />
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/app/Console" />
+      <recent name="$PROJECT_DIR$/tests/Unit" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests" />
+      <recent name="$PROJECT_DIR$/tests/Unit/App/Models" />
       <recent name="$PROJECT_DIR$/docker/php" />
       <recent name="$PROJECT_DIR$" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/database/factories" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/database/migrations" />
-      <recent name="$PROJECT_DIR$/app" />
-      <recent name="$PROJECT_DIR$/app/Models" />
-    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -43,7 +261,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1600590825847</updated>
-      <workItem from="1600590826868" duration="7067000" />
+      <workItem from="1600590826868" duration="7999000" />
+      <workItem from="1600679658918" duration="5825000" />
     </task>
     <servers />
   </component>
@@ -63,10 +282,10 @@
       <screen x="78" y="27" width="2482" height="1413" />
     </state>
     <state x="1215" y="612" width="197" height="250" key="com.intellij.database.actions.DdlActions$ModifyObject$1/78.27.2482.1413@78.27.2482.1413" timestamp="1600595830938" />
-    <state x="998" y="430" width="671" height="606" key="find.popup" timestamp="1600601689266">
+    <state x="998" y="430" width="671" height="606" key="find.popup" timestamp="1600686245382">
       <screen x="78" y="27" width="2482" height="1413" />
     </state>
-    <state x="998" y="430" width="671" height="606" key="find.popup/78.27.2482.1413@78.27.2482.1413" timestamp="1600601689266" />
+    <state x="998" y="430" width="671" height="606" key="find.popup/78.27.2482.1413@78.27.2482.1413" timestamp="1600686245382" />
     <state x="1044" y="646" width="540" height="181" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1600599173666">
       <screen x="78" y="27" width="2482" height="1413" />
     </state>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d1b7e8de-93f5-45e6-aa80-f9de343946d7" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="ProjectId" id="1hlfuyh7MRvpU3YwbT4y7VGfYsg" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mariadb" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/database/factories" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docker/php" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/database/factories" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/database/migrations" />
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/app/Models" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d1b7e8de-93f5-45e6-aa80-f9de343946d7" name="Default Changelist" comment="" />
+      <created>1600590825847</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600590825847</updated>
+      <workItem from="1600590826868" duration="7067000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="993" y="414" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600595731389">
+      <screen x="78" y="27" width="2482" height="1413" />
+    </state>
+    <state x="993" y="414" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/78.27.2482.1413@78.27.2482.1413" timestamp="1600595731389" />
+    <state x="996" y="615" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600601855878">
+      <screen x="78" y="27" width="2482" height="1413" />
+    </state>
+    <state x="996" y="615" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/78.27.2482.1413@78.27.2482.1413" timestamp="1600601855878" />
+    <state x="1215" y="612" width="197" height="250" key="com.intellij.database.actions.DdlActions$ModifyObject$1" timestamp="1600595830938">
+      <screen x="78" y="27" width="2482" height="1413" />
+    </state>
+    <state x="1215" y="612" width="197" height="250" key="com.intellij.database.actions.DdlActions$ModifyObject$1/78.27.2482.1413@78.27.2482.1413" timestamp="1600595830938" />
+    <state x="998" y="430" width="671" height="606" key="find.popup" timestamp="1600601689266">
+      <screen x="78" y="27" width="2482" height="1413" />
+    </state>
+    <state x="998" y="430" width="671" height="606" key="find.popup/78.27.2482.1413@78.27.2482.1413" timestamp="1600601689266" />
+    <state x="1044" y="646" width="540" height="181" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1600599173666">
+      <screen x="78" y="27" width="2482" height="1413" />
+    </state>
+    <state x="1044" y="646" width="540" height="181" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/78.27.2482.1413@78.27.2482.1413" timestamp="1600599173666" />
+  </component>
+</project>

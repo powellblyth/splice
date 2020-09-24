@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8687ede8cc94e94da7116e5f98f98acb",
+    "content-hash": "7c3f8533d83ba384d88808609c09d146",
     "packages": [
         {
             "name": "aftership/aftership-php-sdk",
@@ -898,16 +898,16 @@
         },
         {
             "name": "giggsey/libphonenumber-for-php",
-            "version": "8.12.9",
+            "version": "8.12.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giggsey/libphonenumber-for-php.git",
-                "reference": "674b79ae3362409d08e550cb196d982485a76225"
+                "reference": "befffd590d1e2333bbb6d712541ccccf5fc08f1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/674b79ae3362409d08e550cb196d982485a76225",
-                "reference": "674b79ae3362409d08e550cb196d982485a76225",
+                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/befffd590d1e2333bbb6d712541ccccf5fc08f1f",
+                "reference": "befffd590d1e2333bbb6d712541ccccf5fc08f1f",
                 "shasum": ""
             },
             "require": {
@@ -962,7 +962,7 @@
                 "phonenumber",
                 "validation"
             ],
-            "time": "2020-08-31T09:51:44+00:00"
+            "time": "2020-09-22T07:23:22+00:00"
         },
         {
             "name": "giggsey/locale",
@@ -1067,16 +1067,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "7.0.1",
+            "version": "7.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "2d9d3c186a6637a43193e66b097c50e4451eaab2"
+                "reference": "7edeaa528fbb57123028bd5a76b9ce9540194e26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/2d9d3c186a6637a43193e66b097c50e4451eaab2",
-                "reference": "2d9d3c186a6637a43193e66b097c50e4451eaab2",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/7edeaa528fbb57123028bd5a76b9ce9540194e26",
+                "reference": "7edeaa528fbb57123028bd5a76b9ce9540194e26",
                 "shasum": ""
             },
             "require": {
@@ -1090,7 +1090,6 @@
                 "psr/http-client-implementation": "1.0"
             },
             "require-dev": {
-                "ergebnis/composer-normalize": "^2.0",
                 "ext-curl": "*",
                 "php-http/client-integration-tests": "dev-phpunit8",
                 "phpunit/phpunit": "^8.5.5",
@@ -1104,7 +1103,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "7.0-dev"
+                    "dev-master": "7.1-dev"
                 }
             },
             "autoload": {
@@ -1144,7 +1143,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2020-06-27T10:33:25+00:00"
+            "time": "2020-09-22T09:10:04+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -1388,16 +1387,16 @@
         },
         {
             "name": "laravel/fortify",
-            "version": "v1.4.3",
+            "version": "v1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/fortify.git",
-                "reference": "91518afbf3ce33d3e6b2a36b032e67e8474367e9"
+                "reference": "77bd46ac1729939a8db97b890a4d752dce79dc53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/fortify/zipball/91518afbf3ce33d3e6b2a36b032e67e8474367e9",
-                "reference": "91518afbf3ce33d3e6b2a36b032e67e8474367e9",
+                "url": "https://api.github.com/repos/laravel/fortify/zipball/77bd46ac1729939a8db97b890a4d752dce79dc53",
+                "reference": "77bd46ac1729939a8db97b890a4d752dce79dc53",
                 "shasum": ""
             },
             "require": {
@@ -1443,20 +1442,20 @@
                 "auth",
                 "laravel"
             ],
-            "time": "2020-09-20T16:37:38+00:00"
+            "time": "2020-09-22T16:14:44+00:00"
         },
         {
             "name": "laravel/framework",
-            "version": "v8.5.0",
+            "version": "v8.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "5a748eecae35fd453e0b1e4d4b6f4fadf0d3e7ac"
+                "reference": "a71952a6dba55de0bb11b5fbbd84874eda2a755c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/5a748eecae35fd453e0b1e4d4b6f4fadf0d3e7ac",
-                "reference": "5a748eecae35fd453e0b1e4d4b6f4fadf0d3e7ac",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/a71952a6dba55de0bb11b5fbbd84874eda2a755c",
+                "reference": "a71952a6dba55de0bb11b5fbbd84874eda2a755c",
                 "shasum": ""
             },
             "require": {
@@ -1606,20 +1605,20 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-09-18T21:27:11+00:00"
+            "time": "2020-09-22T13:42:02+00:00"
         },
         {
             "name": "laravel/jetstream",
-            "version": "v1.2.1",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/jetstream.git",
-                "reference": "9dd74e79fe09c570eb7a6bb4f00eac2c0dc3ed5f"
+                "reference": "1bd5454ff368efba453700091e595f9aba1d713a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/jetstream/zipball/9dd74e79fe09c570eb7a6bb4f00eac2c0dc3ed5f",
-                "reference": "9dd74e79fe09c570eb7a6bb4f00eac2c0dc3ed5f",
+                "url": "https://api.github.com/repos/laravel/jetstream/zipball/1bd5454ff368efba453700091e595f9aba1d713a",
+                "reference": "1bd5454ff368efba453700091e595f9aba1d713a",
                 "shasum": ""
             },
             "require": {
@@ -1668,7 +1667,7 @@
                 "laravel",
                 "tailwind"
             ],
-            "time": "2020-09-15T20:17:25+00:00"
+            "time": "2020-09-22T16:34:07+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -1732,16 +1731,16 @@
         },
         {
             "name": "laravel/telescope",
-            "version": "v4.0.0",
+            "version": "v4.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/telescope.git",
-                "reference": "ff4594284ad73e895070265a26e1c0538b984191"
+                "reference": "4bd0a8b01b889c7704cd0a1d04a849c8da993f43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/telescope/zipball/ff4594284ad73e895070265a26e1c0538b984191",
-                "reference": "ff4594284ad73e895070265a26e1c0538b984191",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/4bd0a8b01b889c7704cd0a1d04a849c8da993f43",
+                "reference": "4bd0a8b01b889c7704cd0a1d04a849c8da993f43",
                 "shasum": ""
             },
             "require": {
@@ -1787,7 +1786,7 @@
                 "laravel",
                 "monitoring"
             ],
-            "time": "2020-09-08T14:55:22+00:00"
+            "time": "2020-09-22T16:49:01+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -2009,16 +2008,16 @@
         },
         {
             "name": "league/mime-type-detection",
-            "version": "1.4.0",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/mime-type-detection.git",
-                "reference": "fda190b62b962d96a069fcc414d781db66d65b69"
+                "reference": "ea2fbfc988bade315acd5967e6d02274086d0f28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/mime-type-detection/zipball/fda190b62b962d96a069fcc414d781db66d65b69",
-                "reference": "fda190b62b962d96a069fcc414d781db66d65b69",
+                "url": "https://api.github.com/repos/thephpleague/mime-type-detection/zipball/ea2fbfc988bade315acd5967e6d02274086d0f28",
+                "reference": "ea2fbfc988bade315acd5967e6d02274086d0f28",
                 "shasum": ""
             },
             "require": {
@@ -2046,20 +2045,20 @@
                 }
             ],
             "description": "Mime-type detection for Flysystem",
-            "time": "2020-08-09T10:34:01+00:00"
+            "time": "2020-09-21T18:10:53+00:00"
         },
         {
             "name": "livewire/livewire",
-            "version": "v2.2.5",
+            "version": "v2.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/livewire.git",
-                "reference": "ffaa43e02e9b9ae56c8ae16a438b48844f6e9147"
+                "reference": "97a380cc39760e3076f26559cd79e4a8c98b8916"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/ffaa43e02e9b9ae56c8ae16a438b48844f6e9147",
-                "reference": "ffaa43e02e9b9ae56c8ae16a438b48844f6e9147",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/97a380cc39760e3076f26559cd79e4a8c98b8916",
+                "reference": "97a380cc39760e3076f26559cd79e4a8c98b8916",
                 "shasum": ""
             },
             "require": {
@@ -2105,7 +2104,7 @@
                 }
             ],
             "description": "A front-end framework for Laravel.",
-            "time": "2020-09-18T13:55:17+00:00"
+            "time": "2020-09-22T19:24:38+00:00"
         },
         {
             "name": "mobiledetect/mobiledetectlib",
@@ -2242,16 +2241,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.40.0",
+            "version": "2.40.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "6c7646154181013ecd55e80c201b9fd873c6ee5d"
+                "reference": "d9a76d8b7eb0f97cf3a82529393245212f40ba3b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/6c7646154181013ecd55e80c201b9fd873c6ee5d",
-                "reference": "6c7646154181013ecd55e80c201b9fd873c6ee5d",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/d9a76d8b7eb0f97cf3a82529393245212f40ba3b",
+                "reference": "d9a76d8b7eb0f97cf3a82529393245212f40ba3b",
                 "shasum": ""
             },
             "require": {
@@ -2317,7 +2316,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2020-09-11T19:00:58+00:00"
+            "time": "2020-09-23T08:17:37+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -7560,7 +7559,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.3",
+        "php": "^7.4",
         "ext-curl": "^7.3",
         "ext-ftp": "^7.3",
         "ext-json": "^7.4"

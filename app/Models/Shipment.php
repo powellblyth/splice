@@ -39,11 +39,11 @@ class Shipment extends Model {
 
 
     public function order(): \Illuminate\Database\Eloquent\Relations\BelongsTo {
-        return $this->belongsTo('App\Order');
+        return $this->belongsTo(Order::class);
     }
 
     public function order_lines(): \Illuminate\Database\Eloquent\Relations\BelongsToMany {
-        return $this->belongsToMany('App\OrderLine');
+        return $this->belongsToMany(OrderLine::class);
     }
 
 }

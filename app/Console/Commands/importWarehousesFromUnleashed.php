@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Library\Services\Unleashed;
+use App\Models\Warehouse;
 use Illuminate\Console\Command;
 
 class importWarehousesFromUnleashed extends Command
@@ -39,7 +40,7 @@ class importWarehousesFromUnleashed extends Command
     public function handle()
     {
         $factName = 'unleashedWarehousesDateSince';
-        $className = 'App\\Warehouse';
+        $className = Warehouse::class;
         $unleashedFunctionName = 'getWarehouses';
 
         $unleashed = new Unleashed();

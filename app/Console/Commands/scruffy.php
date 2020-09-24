@@ -5,6 +5,8 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\Models\User;
 use App\Notifications\OrdersDespatchUpdateFailureNotification;
+use Illuminate\Support\Facades\Log;
+
 class scruffy extends Command
 {
     /**
@@ -38,6 +40,6 @@ class scruffy extends Command
      */
     public function handle()
     {
-                \Log::error('You are cheese');
+                Log::error('You are cheese');
     }
 }

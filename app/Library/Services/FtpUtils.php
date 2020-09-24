@@ -2,6 +2,7 @@
 
 namespace App\Library\Services;
 
+use App\Exceptions\FileNotOpenableException;
 use App\Exceptions\FTPException;
 
 class FtpUtils
@@ -115,7 +116,7 @@ class FtpUtils
      * @param string $localFileName
      * @param bool $deleteAfterGetting
      * @throws FTPException
-     * @throws \App\Exceptions\FileNotOpenableException
+     * @throwsFileNotOpenableException
      */
     public function getFile(string $remotePath, string $remoteFileName, string $localPath, string $localFileName, bool $deleteAfterGetting = false)
     {
@@ -124,7 +125,7 @@ class FtpUtils
                 $fullLocalFilePath  = $this->cleanPath($localPath) . $localFileName;
                 $fullRemoteFilePath = $this->cleanPath($remotePath) . $remoteFileName;
                 $fileHandle         = FileUtils::openFileForWriting($fullLocalFilePath);
-            } catch (\Exceptions\FileNotOpenableException $ex) {
+            } catch (FileNotOpenableException $ex) {
                 throw new \Exception('Could not open destination file: ' . $ex->getMessage());
             }
             ftp_fget($this->ftpHandle, $fileHandle, $fullRemoteFilePath, FTP_ASCII);

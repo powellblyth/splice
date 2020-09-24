@@ -124,7 +124,7 @@ class processWalkerDespatchConfirms extends Command {
                                     $order = Order::where('order_number', $orderNumber)->first();
                                     if (!$order instanceof Order) {
                                         echo "Not found :( \n";
-                                        \Log::error("$orderNumber found not found importing despatch confirm");
+                                        Log:error("$orderNumber found not found importing despatch confirm");
                                         $errors[$orderNumber] = $fileName . ' - could not find order when marking despatched';
                                     } else {
                                         $orderLine = $order->order_lines()->where('line_number', $indexedData['DatabaseLineNumber'])->first();
@@ -156,7 +156,7 @@ class processWalkerDespatchConfirms extends Command {
                 } catch (BadFileException $ex) {
                     echo "NO GOOD";
 //                    $errors[$fileName] = 'File was corrupt';
-                    \Log::error("$fileName File was corrupt");
+                    Log::error("$fileName File was corrupt");
                     FileUtils::closeFile($fileHandle);
 
                     rename($workingPath . $fileName, $rejectedPath . $fileName);

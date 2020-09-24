@@ -10,7 +10,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  * @method static where(string $string, $id)
  */
 class OrderLine extends Model {
-    //
     public function isShipping(): bool {
         return ('shipping' == strtolower($this->type));
     }

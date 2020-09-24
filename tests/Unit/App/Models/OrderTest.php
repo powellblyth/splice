@@ -9,46 +9,49 @@
 namespace Tests\Unit\App\Models;
 
 
+use App\Models\Order;
+use Mockery\Mock;
 use Tests\ModelTestBase;
 
 //use Tests\Unit\ModelTestBase;
 //use phpmock\MockBuilder;
 
-class ProductGroupTest extends ModelTestBase
+class OrderTest extends ModelTestBase
 {
-    public function providerpopulateFromUnleashed()
+    public function providerFormattedAddress()
     {
-        $stdObject                 = new \stdClass();
-        $stdObject->Guid           = 'someguid';
-        $stdObject->GroupName      = 'someGroupName';
-        $stdObject->LastModifiedOn = '\/Date(1538861748000)\/';
         return [
-            [false, ['source' => 'unleashed', 'guid' => 'someguid', 'remote_last_modified' => '2018-10-06 21:35:48'], false, $stdObject],
-            [true, ['source' => 'unleashed', 'guid' => 'someguid', 'remote_last_modified' => '2018-10-06 21:35:48'], true, $stdObject],
+            ['', '', '', '', '', '', ''],
+            ['1 bishop, fish, toastville, breakfasttone, BN1 1NB, FR', '1 bishop', 'fish', 'toastville', 'breakfasttone', 'BN1 1NB', 'FR'],
+            ['1 bishop, fish, breakfasttone, BN1 1NB, GB', '1 bishop', 'fish', '', 'breakfasttone', 'BN1 1NB', 'GB'],
+            ['1 bishop, toast-SEPARATOR-fish-SEPARATOR-breakfasttone-SEPARATOR-BN1 1NB-SEPARATOR-GB', '1 bishop, toast', 'fish', '', 'breakfasttone', 'BN1 1NB', 'GB', '-SEPARATOR-'],
         ];
     }
 
     /**
-     * A basic test example.
-     * @dataProvider providerpopulateFromUnleashed
-     * @param $expectedSaveResult
-     * @param $expectedValues
-     * @param bool $saveReturns
-     * @param \stdClass $dataObject
+     * @param string $expected
+     * @param string $delivery_address_1
+     * @param string $delivery_address_2
+     * @param string $delivery_suburb
+     * @param string $delivery_city
+     * @param string $delivery_post_code
+     * @param string $delivery_country
+     * @param string $separator
+     * @group orders
+     * @dataProvider providerFormattedAddress
      */
-    public function testpopulateFromUnleashed(bool $expectedSaveResult, array $expectedValues, bool $saveReturns, \stdClass $dataObject)
+    public function testFormattedAddress(string $expected, string $delivery_address_1, string $delivery_address_2, string $delivery_suburb, string $delivery_city, string $delivery_post_code, string $delivery_country, string $separator = ', ')
     {
-        $this->sut = $this->getMockBuilder('\App\ProductGroup')->setMethods(['save'])->disableOriginalConstructor()->getMock();
-        $this->sut->method('save')->willReturn($saveReturns);
-        $this->assertSame($expectedSaveResult, $this->sut->populateFromUnleashed($dataObject));
-        foreach ($expectedValues as $expectedKey => $expectedValue) {
-            $this->assertSame($this->sut->{$expectedKey}, $expectedValue);
-        }
-    }
-
-    public function testproducts()
-    {
-        $this->runRelationshipTest('\Illuminate\Database\Eloquent\Relations\HasMany', 'hasMany', 'products', '\App\ProductGroup');
+        /**
+         * @var Order $order
+         */
+        $order = Order::factory(['delivery_address_1' => $delivery_address_1,
+                                 'delivery_address_2' => $delivery_address_2,
+                                 'delivery_suburb'    => $delivery_suburb,
+                                 'delivery_city'      => $delivery_city,
+                                 'delivery_post_code' => $delivery_post_code,
+                                 'delivery_country'   => $delivery_country])->make();
+        $this->assertSame($expected, $order->formattedAddress($separator));
     }
 
 

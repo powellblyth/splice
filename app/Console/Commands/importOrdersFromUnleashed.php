@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Order;
 use Illuminate\Console\Command;
 use App\Library\Services\Unleashed;
 
@@ -37,7 +38,7 @@ class importOrdersFromUnleashed extends Command {
      */
     public function handle() {
         $factName = 'salesOrderDateSince';
-        $className = 'App\\Order';
+        $className = Order::class;
         $unleashedFunctionName = 'getSalesOrdersModifiedSince';
 
         $unleashed = new Unleashed();

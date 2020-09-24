@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Library\Services\Unleashed;
+use App\Models\ProductGroup;
 use Illuminate\Console\Command;
 
 class importProductGroupsFromUnleashed extends Command {
@@ -36,7 +37,7 @@ class importProductGroupsFromUnleashed extends Command {
      */
     public function handle() {
         $factName = 'unleashedProductGroupsDateSince';
-        $className = 'App\\ProductGroup';
+        $className = ProductGroup::class;
         $unleashedFunctionName = 'getProductGroups';
 
         $unleashed = new Unleashed();

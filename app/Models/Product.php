@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Library\Services\Unleashed;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Support\Facades\Log;
 
 /**
  * @method static where(string $string, $WarehouseProductCode)
@@ -93,7 +94,7 @@ class Product extends Model
                 try {
                     $correctProductGroup->products()->save($this);
                 } catch (\BadMethodCallException $e) {
-                    \Log::error($e->getMessage());
+                    Log::error($e->getMessage());
 //                    var_dump($e->getMessage());
 //                    die();
                 }

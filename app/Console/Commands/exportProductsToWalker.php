@@ -5,10 +5,12 @@ namespace App\Console\Commands;
 Use App\Models\Fact;
 use App\Library\Services\FactService;
 use App\Library\Services\WalkerUtils;
+use App\Models\Product;
 use App\Models\ProductGroup;
 use App\Models\Warehouse;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 
 class exportProductsToWalker extends Command {
 
@@ -35,7 +37,7 @@ class exportProductsToWalker extends Command {
         // NOTE that the second is here, because I rebuilt this, and truncated the database
         $factService = FactService::getInstance();
         $factName = 'walkerProductLastUpdate';
-        $databaseClassName = 'App\\Product';
+        $databaseClassName = Product::class;
         $fileSequenceFactName = 'walkerPTOSequenceNumber';
 
         $outputCsvFileName = storage_path('app/chateaurougetowalkerproductexport' . date('YmdHis') . ".csv");
@@ -58,7 +60,7 @@ class exportProductsToWalker extends Command {
             $createdProducts = [];
             foreach ($productsToAdd as $product) {
                 $createdProduct = $warehouse->created_products()->where('product_id', $product->id)->first();
-                if (!$createdProduct instanceof \App\Product) {
+                if (!$createdProduct instanceof Product) {
                     $itemsToExport[] = WalkerUtils::productToCreateRowData($product);
                     $warehouse->created_products()->attach($product);
                     $createdProducts[] = $product->id;
@@ -106,7 +108,7 @@ class exportProductsToWalker extends Command {
                 WalkerUtils::storeOnFtp($outputCsvFileName, $remoteFileName);
             } catch (\Exception $e) {
                 $errors[] = ['level' => 'terminal', $e->getMessage()];
-                \Log::error($e->getMessage());
+                Log::error($e->getMessage());
 //                var_dump($e);
             }
         }
@@ -132,7 +134,7 @@ class exportProductsToWalker extends Command {
             } catch (\Exception $e) {
                 var_dump($e->getMessage());
                 $errors[] = ['level' => 'terminal', $e->getMessage()];
-                \Log::error($e->getMessage());
+                Log::error($e->getMessage());
             }
         }
         $factService->setFact($factName, $dateTo);

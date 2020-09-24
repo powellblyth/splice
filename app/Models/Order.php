@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Library\Services\Unleashed;
 use App\Library\Services\CountryHelper;
 use App\Library\Services\CourierMapper;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
@@ -13,7 +15,19 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class Order extends Model
 {
+    use HasFactory;
+
     protected static $unleashed = null;
+
+    public function shipments(): HasMany
+    {
+        return $this->hasMany(Shipment::class);
+    }
+
+    public function order_lines(): HasMany
+    {
+        return $this->hasMany(OrderLine::class);
+    }
 
     public function populateFromUnleashed(\stdClass $order)
     {
@@ -116,13 +130,13 @@ class Order extends Model
         }
     }
 
-    public function shipments(): HasMany
+    public function banana(){
+        ;
+    }
+    public function formattedAddress(string $separator = ', '): string
     {
-        return $this->hasMany(Shipment::class);
+        $addressArray = [$this->delivery_address_1, $this->delivery_address_2, $this->delivery_suburb, $this->delivery_city, $this->delivery_post_code, $this->delivery_country];
+        return implode($separator, array_filter($addressArray));
     }
 
-    public function order_lines(): HasMany
-    {
-        return $this->hasMany(OrderLine::class);
-    }
 }

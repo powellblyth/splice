@@ -14,6 +14,7 @@ use App\Models\Order;
 use App\Models\OrderLine;
 use App\Models\Product;
 use App\WarehouseStockTransfer;
+use Illuminate\Support\Facades\Log;
 
 class WalkerUtils {
     public static function formatPtoFileName(int $sequence): string {
@@ -43,7 +44,7 @@ class WalkerUtils {
         } catch (FTPException $e) {
             var_dump($e->getMessage());
             $errors[] = ['level' => 'terminal', $e->getMessage()];
-            \Log::error($e->getMessage());
+            Log::error($e->getMessage());
         }
     }
 
@@ -178,7 +179,7 @@ class WalkerUtils {
         ];
         foreach ($warehouseStockTransfer->warehouse_stock_transfer_items()->get() as $stock_transfer_item) {
             $product = $stock_transfer_item->product()->first();
-            if ($product instanceof \App\Product) {
+            if ($product instanceof Product) {
                 $rows[] = ['H' => 'D',
                     'description_1' => substr($product->sku, 0, 100),
                     'quantity' => $stock_transfer_item->quantity,

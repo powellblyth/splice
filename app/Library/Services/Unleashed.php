@@ -10,6 +10,7 @@ namespace App\Library\Services;
 use App\Models\User;
 use App\Library\Services\FactService;
 use App\Notifications\importFromSupplierErrorNotification;
+use Illuminate\Support\Facades\Log;
 
 //// configuration data
 //require_once __DIR__ . '/../config/unleashed.php';
@@ -134,7 +135,7 @@ class Unleashed
             $curl = $this->getCurl($id, $signature, $endpoint, $requestUrl, $format);
             // GET something
             $curl_result = curl_exec($curl);
-//            \Log::error($curl_result);
+//            Log::error($curl_result);
             if (0 !== curl_errno($curl)) {
                 $this->lastError = curl_error($curl);
 //                die(var_dump(curl_errno($curl)));
@@ -142,7 +143,7 @@ class Unleashed
             curl_close($curl);
             return $curl_result;
         } catch (Exception $e) {
-            \Log::error('Error: ' + $e);
+            Log::error('Error: ' + $e);
         }
     }
 
@@ -172,7 +173,7 @@ class Unleashed
             echo 'trying to post ' . print_r($data, true) . ' to ' . "$endpoint/$dataId" . "\n";
             die();
             $curl_result = curl_exec($curl);
-            \Log::error($curl_result);
+            Log::error($curl_result);
             if (0 !== curl_errno($curl)) {
 //                die(var_dump(curl_error($curl)));
                 $this->lastError = curl_error($curl);
@@ -181,8 +182,8 @@ class Unleashed
 //            die('here');
             return $curl_result;
         } catch (Exception $e) {
-//die(var_Dump($e))
-            \Log::error('Error: ' + $e);
+//die(var_Dump($e))Order
+            Log::error('Error: ' + $e);
         }
     }
 // GET in JSON format
@@ -363,9 +364,7 @@ class Unleashed
      * @param string $factName
      * @param string $className
      * @param string $unleashedFunctionName
-     * @param string $dateFrom
      * @param boolean $refresh force the date to refresh
-     * @param string $dateTo
      * @param array $extraParams any extra params to push
      */
     public function importThing(string $factName, string $className, string $unleashedFunctionName, bool $refresh = false, array $extraParams = [])
@@ -392,9 +391,9 @@ class Unleashed
 
                 echo "====================\n\n\n";
                 if (!isset($response->Items)) {
-                    \Log::error('Error downloading ' . $className . 's using ' . $unleashedFunctionName);
-                    \Log::error(json_encode($response));
-                    \Log::error($this->lastError);
+                    Log::error('Error downloading ' . $className . 's using ' . $unleashedFunctionName);
+                    Log::error(json_encode($response));
+                    Log::error($this->lastError);
                     throw new \Exception('Error downloading items, something went wrong between me and the server ' . $className . 's using ' . $unleashedFunctionName . ', ' . $this->lastError);
                 }
                 $unleashedObjectSet = $response->Items;

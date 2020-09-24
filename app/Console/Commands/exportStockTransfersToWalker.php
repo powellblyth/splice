@@ -7,6 +7,7 @@ use App\Library\Services\WalkerUtils;
 use App\Models\Warehouse;
 use App\WarehouseStockTransfer;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 
 class exportStockTransfersToWalker extends Command {
     /**
@@ -40,7 +41,7 @@ class exportStockTransfersToWalker extends Command {
     public function handle() {
         $factService = FactService::getInstance();
         $factName = 'walkerStockTransferLastUpdate';
-        $databaseClassName = 'App\\WarehouseStockTransfer';
+        $databaseClassName = \App\Models\WarehouseStockTransfer::Class;
         $fileSequenceFactName = 'walkerStockTransferequenceNumber';
 
         $outputCsvFileName = storage_path('app/chateaurougetowalkerwarehousetransferexport' . date('YmdHis') . ".csv");
@@ -80,7 +81,7 @@ class exportStockTransfersToWalker extends Command {
                 WalkerUtils::storeOnFtp($outputCsvFileName, $remoteFileName);
             } catch (\Exception $e) {
                 $errors[] = ['level' => 'terminal', $e->getMessage()];
-                \Log::error($e->getMessage());
+                Log::error($e->getMessage());
 //                var_dump($e);
             }
         }

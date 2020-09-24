@@ -10,6 +10,7 @@ use App\Notifications\OrderFailedExportNotification;
 use App\Models\Order;
 use App\Models\User;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 
 class exportToWalker extends Command {
 
@@ -88,7 +89,7 @@ class exportToWalker extends Command {
 
                 } catch (\Exception $e) {
                     var_dump($e->getMessage());
-                    \Log::error($e->getMessage());
+                    Log::error($e->getMessage());
                     $notifiableUsers = User::Where('notify_about_failed_orders', true)->get();
                     $notification = new     OrderFailedExportNotification('Walker', [0 => $e->getMessage()]);
                     foreach ($notifiableUsers as $user) {

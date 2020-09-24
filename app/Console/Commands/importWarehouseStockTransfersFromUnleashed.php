@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Library\Services\Unleashed;
+use App\Models\WarehouseStockTransfer;
 use Illuminate\Console\Command;
 
 class importWarehouseStockTransfersFromUnleashed extends Command {
@@ -37,7 +38,7 @@ class importWarehouseStockTransfersFromUnleashed extends Command {
      */
     public function handle() {
         $factName = 'unleashedWarehouseStockTransfersDateSince';
-        $className = 'App\\WarehouseStockTransfer';
+        $className =WarehouseStockTransfer::class;
         $unleashedFunctionName = 'getWarehouseStockTransfers';
 
         $unleashed = new Unleashed();

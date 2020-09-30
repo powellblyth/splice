@@ -6,10 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @method static where(string $string, $Carrier)
+ * @method static Shipment firstOrCreate(array $array)
+ * @method static Shipment firstOrNew(array $array)
  */
 class Shipment extends Model {
 
-    public function createFromWalker(OrderLine $orderLine, array $data) {
+    public function populateFromWalker(OrderLine $orderLine, array $data) {
         $this->order_line_id = $orderLine->id;
         $this->line_number = $data['DatabaseLineNumber'];
         $this->sku = $data['SKU'];

@@ -17,8 +17,7 @@ class OrdersDespatchUpdateFailureNotification extends Notification {
      * Create a new notification instance.
      * WalkerOrderExportFailed constructor.
      * @param string $supplier
-     * @param array $successData
-     * @return void
+     * @param array $notificationData
      */
     public function __construct(string $supplier, array $notificationData) {
         //
@@ -40,7 +39,7 @@ class OrdersDespatchUpdateFailureNotification extends Notification {
      * Get the mail representation of the notification.
      *
      * @param  mixed $notifiable
-     * @return \Illuminate\Notifications\Messages\MailMessage
+     * @return MailMessage
      */
     public function toMail($notifiable): MailMessage {
         $errors = '';
